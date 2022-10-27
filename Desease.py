@@ -1,3 +1,6 @@
+from codecs import getencoder
+
+
 class Disease: 
     def __init__(self, name):
         self.name = name
@@ -60,9 +63,14 @@ class Patient:
 
 
 #print(Disease("Migraine"))
+nombre = input("Ingresa tu nombre")
+edad = input("Ingresa tu edad")
+gender = input("Ingresa tu sexo")
+
+symptom = input("Ingresa un síntoma")
 
 head_disorders = Disease("Migraine")
-patient_one = Patient("José", 27, "male")
+patient_one = Patient(nombre, edad, gender)
 
 #print(head_disorders.check_disease_database("MonkeyPox"))
 head_disorders.add_disease_database("Migraine")
@@ -75,9 +83,7 @@ head_disorders.add_disease_treatment("Migraine", "Sumatriptan")
 head_disorders.add_disease_treatment("Tension cephalea", "Tylenol")
 
 #patient_one.feel_sick("Yes")
-patient_one.add_your_symptom("scotomata")
-patient_one.add_your_symptom("Fever")
-patient_one.add_your_symptom("Cough")
+patient_one.add_your_symptom(symptom)
 
 #print(patient_one.symptoms)
 
